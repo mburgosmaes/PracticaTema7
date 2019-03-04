@@ -1,5 +1,6 @@
 package com.example.practicatema7;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -10,6 +11,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.Toast;
 
@@ -18,6 +20,7 @@ import java.util.ArrayList;
 public class MainActivity extends AppCompatActivity {
 
     private Spinner mSpinner;
+    ImageView imgWord;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,11 +30,22 @@ public class MainActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
 
         mSpinner = findViewById(R.id.mSpinner);
+        imgWord = findViewById(R.id.imgWord);
 
-        ArrayList<String> categorias = new ArrayList<>();
-        categorias.add("Elemento 1");
-        categorias.add("Elemento 2");
-        categorias.add("Elemento 3");
+      imgWord.setOnClickListener(new View.OnClickListener() {
+          public void onClick(View v) {
+              startActivity(new Intent(MainActivity.this,PantallaMapa.class));
+          }
+      });
+
+
+      ArrayList<String> categorias = new ArrayList<>();
+        categorias.add("España");
+        categorias.add("Londres");
+        categorias.add("Francia");
+        categorias.add("Italia");
+        categorias.add("Japón");
+        categorias.add("Alemania");
 
         ArrayAdapter adp = new ArrayAdapter(MainActivity.this, android.R.layout.simple_spinner_dropdown_item, categorias);
         mSpinner.setAdapter(adp);
@@ -47,30 +61,16 @@ public class MainActivity extends AppCompatActivity {
 
         FloatingActionButton fab = findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this,PantallaNuevoEdicion.class));
             }
         });
 
     }
 
     @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_main, menu);
-        return true;
-    }
-
-    @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
 
         return super.onOptionsItemSelected(item);
     }

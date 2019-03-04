@@ -8,4 +8,7 @@
     <string name="valoracion">Valoración:</string>
     <string name="comentarios">Comentarios:</string>
     <string name="escribe">Escribe aquí...</string>
+    <string name="lugares">Mis lugares favoritos</string>
+    <string name="guardar">Guardar</string>
+    <string name="toastBD">Sitio creado ehorabuena.</string>
 </resources>

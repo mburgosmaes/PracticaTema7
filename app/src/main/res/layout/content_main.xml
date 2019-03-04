@@ -10,6 +10,16 @@
     tools:context=".MainActivity"
     tools:showIn="@layout/activity_main">
 
+    <TextView
+        android:id="@+id/textView7"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="50dp"
+        android:gravity="center"
+        android:text="@string/lugares"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="30sp" />
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -22,12 +32,23 @@
             android:layout_marginRight="15dp"
             android:layout_weight="1" />
 
-        <ImageButton
-            android:id="@+id/imageButton3"
+        <ImageView
+            android:id="@+id/imgWord"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            app:srcCompat="@drawable/word" />
+            app:srcCompat="@drawable/mundo" />
 
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <android.support.v7.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+             />
     </LinearLayout>
 </LinearLayout>
