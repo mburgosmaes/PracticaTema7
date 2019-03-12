@@ -30,7 +30,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginRight="15dp"
-            android:layout_weight="1" />
+            android:layout_weight="1"
+            android:entries="@array/categorias" />
 
         <ImageView
             android:id="@+id/imgWord"
@@ -46,9 +47,10 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-        <android.support.v7.widget.RecyclerView
+        <ListView
+            android:id="@+id/card_listView"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-             />
+            android:layout_marginTop="50dp" />
     </LinearLayout>
 </LinearLayout>

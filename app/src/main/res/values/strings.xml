@@ -7,8 +7,22 @@
     <string name="latitud">Latitud:</string>
     <string name="valoracion">Valoración:</string>
     <string name="comentarios">Comentarios:</string>
+    <string-array name="categorias">
+        <item>@string/cat1</item>
+        <item>@string/cat2</item>
+        <item>@string/cat3</item>
+        <item>@string/cat4</item>
+        <item>@string/cat5</item>
+    </string-array>
+
+
     <string name="escribe">Escribe aquí...</string>
     <string name="lugares">Mis lugares favoritos</string>
     <string name="guardar">Guardar</string>
     <string name="toastBD">Sitio creado ehorabuena.</string>
+    <string name="cat1">Bar Moli</string>
+    <string name="cat2">Gasolinera EasyFuel</string>
+    <string name="cat3">Paxarrato</string>
+    <string name="cat4">Nilo Shishas</string>
+    <string name="cat5">Origin Shishas</string>
 </resources>

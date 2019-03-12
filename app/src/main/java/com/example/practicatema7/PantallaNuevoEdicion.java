@@ -18,11 +18,13 @@ import com.example.practicatema7.Logic.LogicSitios;
 
 import java.util.ArrayList;
 
+import static android.R.layout.simple_spinner_item;
+
 public class PantallaNuevoEdicion extends AppCompatActivity {
 
-    EditText txt1,txt2,txt3,txt4;
-    Spinner spinner1;
+    EditText txt1, txt2, txt3, txt4;
     RatingBar rantingB;
+    Spinner spinner1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,29 +36,10 @@ public class PantallaNuevoEdicion extends AppCompatActivity {
         txt3.findViewById(R.id.txt3);
         txt4.findViewById(R.id.txt4);
         rantingB.findViewById(R.id.ratingB);
-        spinner1 =findViewById(R.id.spinner);
-
-
-
-        ArrayList<String> categorias = new ArrayList<>();
-        categorias.add("España");
-        categorias.add("Londres");
-        categorias.add("Francia");
-        categorias.add("Italia");
-        categorias.add("Japón");
-        categorias.add("Alemania");
-
-        ArrayAdapter adp = new ArrayAdapter(PantallaNuevoEdicion.this, android.R.layout.simple_spinner_dropdown_item, categorias);
-        spinner1.setAdapter(adp);
-
-        spinner1.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                String categoria = (String) spinner1.getAdapter().getItem(position);
-                Toast.makeText(PantallaNuevoEdicion.this,"Seleccionaste:" + categoria, Toast.LENGTH_SHORT) .show();
-            }
-            public void onNothingSelected(AdapterView<?> parent){}
-        });
+        spinner1.findViewById(R.id.spinner1);
+        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,R.array.categorias, android.R.layout.simple_spinner_item);
+                adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinner1.setAdapter(adapter);
     }
 
 
@@ -83,8 +66,4 @@ public class PantallaNuevoEdicion extends AppCompatActivity {
         Toast.makeText(this, getResources().getString(R.string.toastBD), Toast.LENGTH_SHORT).show();
         return false;
     }
-
-
-
-
 }
