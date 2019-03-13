@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">PracticaTema7</string>
+    <string name="nombre" translatable="false">First name</string>
+    <string name="categoria" translatable="false">Category</string>
+    <string name="longitud" translatable="false">Length</string>
+    <string name="latitud" translatable="false">Latitude</string>
+    <string name="valoracion" translatable="false">Assessment</string>
+    <string name="comentarios" translatable="false">Comments</string>
+    <string name="escribe" translatable="false">Write here...</string>
+    <string name="lugares" translatable="false">My favourite places</string>
+    <string name="guardar" translatable="false">Save</string>
+    <string name="toastBD" translatable="false">Website created eGood</string>
+    <string name="cat1" translatable="false">Bar</string>
+    <string name="cat2" translatable="false">Fuel station</string>
+    <string name="cat3" translatable="false">Pub</string>
+    <string name="cat4" translatable="false">Fast food</string>
+    <string name="cat5" translatable="false">Store</string>
+    <string name="edit" translatable="false">Edit</string>
+    <string name="eliminar" translatable="false">Remove</string>
+    <string name="Sitioeliminado" translatable="false">Site successfully deleted</string>
+    <string name="Sitioedit" translatable="false">"Site edited correctly "</string>
+</resources>
