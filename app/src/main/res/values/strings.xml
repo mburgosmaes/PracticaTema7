@@ -20,9 +20,9 @@
     <string name="lugares">Mis lugares favoritos</string>
     <string name="guardar">Guardar</string>
     <string name="toastBD">Sitio creado ehorabuena.</string>
-    <string name="cat1">Bar Moli</string>
-    <string name="cat2">Gasolinera EasyFuel</string>
-    <string name="cat3">Paxarrato</string>
-    <string name="cat4">Nilo Shishas</string>
-    <string name="cat5">Origin Shishas</string>
+    <string name="cat1">Bar</string>
+    <string name="cat2">Gasolinera</string>
+    <string name="cat3">Pub</string>
+    <string name="cat4">Comida rápida</string>
+    <string name="cat5">Tienda</string>
 </resources>

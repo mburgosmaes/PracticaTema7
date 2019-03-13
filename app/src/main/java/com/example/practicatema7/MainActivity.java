@@ -25,8 +25,10 @@ import java.util.List;
 public class MainActivity extends AppCompatActivity {
 
     public ListView listView;
-    private static List<Sitios> lstSitios;
+    private static List<Sitios> listaSitios;
     ImageView imgWord;
+    Spinner mSpinner;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,18 +40,17 @@ public class MainActivity extends AppCompatActivity {
         listView = findViewById(R.id.card_listView);
         listView.addHeaderView(new View(this)); // añade espacio arriba de la primera card
         listView.addFooterView(new View(this)); // añade espacio debajo de la última card
-
         listView.setOnItemClickListener(
                 new AdapterView.OnItemClickListener() {
                     @Override
                     public void onItemClick(AdapterView parent, View view, int position, long id) {
-                        App.sitiosActivo = lstSitios.get(position - 1);
+                        App.sitiosActivo = listaSitios.get(position - 1);
                         App.accion = App.INFORMACION;
                         startActivity(new Intent(getApplicationContext(), Informacion.class));
                     }
                 }
         );
-
+        //Imagen para mapa
         imgWord = findViewById(R.id.imgWord);
 
       imgWord.setOnClickListener(new View.OnClickListener() {
@@ -67,19 +68,37 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-    }
+        //Spinner de categorias
+        mSpinner = findViewById(R.id.mSpinner);
+        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,R.array.categorias, android.R.layout.simple_spinner_item);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        mSpinner.setAdapter(adapter);
+
+        mSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                verInfo();
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {}
+        });
+
+        }
 
     @Override
     protected void onResume() {
         super.onResume();
-        CardAdapter listadoDeCards = new CardAdapter(getApplicationContext(),R.id.card_listView);
-       // CardAdapter listadoDeCards = new CardAdapter(getApplicationContext(), R.layout.list_item_card);
+        verInfo();
+    }
 
-        lstSitios = LogicSitios.listaSitios(this);
-        if (lstSitios == null) {
-            Toast.makeText(this, "La base de datos está vacía.", Toast.LENGTH_LONG).show();
+    private void verInfo() {
+        CardAdapter listadoDeCards = new CardAdapter(getApplicationContext(), R.layout.list_item_card);
+        listaSitios = LogicSitios.listaSitios2(this, mSpinner);
+        if (listaSitios == null) {
+            listView.setAdapter(null);
         } else {
-            for (Sitios p : lstSitios) {
+            for (Sitios p : listaSitios) {
                 listadoDeCards.add(p);
             }
             listView.setAdapter(listadoDeCards);

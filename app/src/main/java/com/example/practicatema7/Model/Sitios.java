@@ -4,41 +4,40 @@ public class Sitios
 {
     private Long id;
     private String nombre;
-    private String comentarios;
-    private Integer categoria;
-    private Float valoracion;
-    private Float longitud;
     private Float latitud;
+    private Float longitud;
+    private String comentarios;
+    private Float valoracion;
+    private Integer categoria;
 
     public Sitios() {
         this.id = null;
         this.nombre = "";
-        this.comentarios="";
-        this.categoria=0;
-        this.valoracion=null;
-        this.longitud = null;
         this.latitud = null;
-
+        this.longitud = null;
+        this.comentarios="";
+        this.valoracion=null;
+        this.categoria=0;
     }
 
-    public Sitios(String nombre, String comentarios, Integer categoria, Float valoracion, Float longitud, Float latitud) {
+    public Sitios(String nombre, Float latitud, Float longitud, String comentarios, Float valoracion, Integer categoria) {
         this.id = null;
         this.nombre = nombre;
-        this.comentarios=comentarios;
-        this.categoria=categoria;
-        this.valoracion=valoracion;
-        this.longitud=longitud;
         this.latitud=latitud;
+        this.longitud=longitud;
+        this.comentarios=comentarios;
+        this.valoracion=valoracion;
+        this.categoria=categoria;
     }
 
-    public Sitios(Long id, String nombre, String comentarios, Integer categoria, Float valoracion, Float longitud,  Float latitud) {
+    public Sitios(Long id, String nombre, Float latitud, Float longitud, String comentarios, Float valoracion, Integer categoria) {
         this.id = id;
         this.nombre = nombre;
-        this.comentarios=comentarios;
-        this.categoria=categoria;
-        this.valoracion=valoracion;
-        this.longitud=longitud;
         this.latitud=latitud;
+        this.longitud=longitud;
+        this.comentarios=comentarios;
+        this.valoracion=valoracion;
+        this.categoria=categoria;
     }
 
     public Long getId() {
@@ -56,24 +55,11 @@ public class Sitios
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
-
-    public String getComentarios() {
-        return comentarios;
+    public Float getLatitud() {
+        return latitud;
     }
-    public void setComentarios(String comentarios) {
-        this.comentarios = comentarios;
-    }
-    public Integer getCategoria() {
-        return categoria;
-    }
-    public void setCategoria(Integer categoria) {
-        this.categoria = categoria;
-    }
-    public Float getValoracion() {
-        return valoracion;
-    }
-    public void setValoracion(Float valoracion) {
-        this.valoracion = valoracion;
+    public void setLatitud(Float latitud) {
+        this.latitud = latitud;
     }
     public Float getLongitud() {
         return longitud;
@@ -81,22 +67,34 @@ public class Sitios
     public void setLongitud(Float longitud) {
         this.longitud = longitud;
     }
-    public Float getLatitud() {
-        return latitud;
+    public String getComentarios() {
+        return comentarios;
     }
-    public void setLatitud(Float latitud) {
-        this.latitud = latitud;
+    public void setComentarios(String comentarios) {
+        this.comentarios = comentarios;
+    }
+    public Float getValoracion() {
+        return valoracion;
+    }
+    public void setValoracion(Float valoracion) {
+        this.valoracion = valoracion;
+    }
+    public Integer getCategoria() {
+        return categoria;
+    }
+    public void setCategoria(Integer categoria) {
+        this.categoria = categoria;
     }
     @Override
     public String toString() {
         return "Producto {" +
                 "id=" + id +
                 ", nombre='" + nombre + '\'' +
+                ", latitud=" + latitud +
+                ", longitud=" + longitud +
                 ", comentarios=" + comentarios +
-                ", categoria=" + categoria+
-                ", valoracio=" + valoracion+
-                ", longitud=" + longitud+
-                ", latitud='" + latitud+ '\'' +
+                ", valoracion=" + valoracion +
+                ", categoria='" + categoria + '\'' +
                 '}';
     }
 }
